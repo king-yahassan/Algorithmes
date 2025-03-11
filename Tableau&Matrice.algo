@@ -1,0 +1,119 @@
+ALGORITHM algorithm_name
+VAR
+    //Declaration de variables
+    num1 , _num , Num2: INTEGER ;
+    firstName: STRING ;
+    lastName , full_name : String ;
+    isStudent : BOOLEAN ;
+    etudiant1_algo ,etudiant2_algo ,etudiant3_algo,etudiant4_algo,...,etudiant100_algo : FLOAT
+
+    Notes : ARRAY_OF FLOAT [100];
+    Noms : ARRAY_OF STRING [5] ;
+    somme : FLOAT ;
+    Matrice : ARRAY_OF INTEGER [13][10] ;
+    Matric3D : ARRAY_OF INTEGER [13][10][4] ;
+    Matric4D : ARRAY_OF INTEGER [13][10][4][9] ;
+BEGIN
+    //Affectations
+    num1 := 23 ;
+    Write("Donnez une valeur pour la variable num1"  ) ;//Ecriture ou Sortie
+    Read(num1) ;//Lecture ou Entrée
+
+    Num2 = num1 +_num  ;
+    Write("La somme de ces deux nombres", num1 , "et " , _num ,"Est de", Num2);
+
+    firstName <- 'Moussa' ;
+    lastName := "Ndiaye" ;
+    full_name = firstName + lastName // Concaténation MoussaNdiaye
+    full_name = firstName + " " + lastName //Moussa Ndiaye
+
+    Write("Bonjour ," , full_name) //Comme sortie : Bonjour ,Moussa Ndiaye
+    Read(etudiant1_algo , ..., etudiant100_algo)
+
+    etudiant1_algo := 13 ;
+    etudiant2_algo := 14.5 ;
+    etudiant3_algo := 18 ;
+    etudiant4_algo := 8 ;
+    ...
+    etudiant100_algo := 17 ;
+
+    Write("LA note de l'etudiant 1 en Algo est de :" ,etudiant1_algo ) ;
+    Write("LA note de l'etudiant 2 en Algo est de :" ,etudiant2_algo ) ;
+    ...
+    Write("LA note de l'etudiant 100 en Algo est de :" ,etudiant100_algo ) ;
+    
+    Read(Notes) ;
+    Notes := [13 , 14 , 5 , 18 , 8 ,..., 17 ] ; // Notes(1, 100)
+//  indices   0     1   2    3          100    
+
+    // Notes[0] <- 13 ;
+    // Notes[1] <- 14.5 ;
+    // ...
+    // Notes[100] <-17 ;
+
+    // Read(Notes[0] ,... , )
+    Notes[0] = Notes[0] + 2
+    Notes[1] = Notes[1] + 2
+    Notes[2] = Notes[2] + 2
+    .
+    .
+    .
+    Notes[100] = Notes[100] + 2
+
+    Write("Les notes des etudiants en Algo :" , Notes) ;
+
+    Notes[1] := Notes[1] + 2 ; // Notes[1] = 14,5 + 2  => Notes[1] = 16,5
+    
+    Write(Notes[1]) ; //Output : 16.5
+    //LA somme des éléméents à l'indice 3 et 2 $
+    somme <- Notes[3] + Notes[2]  ; // somme = 8+18 => somme =  26
+    Write(somme) ; //output 26
+
+    //Tableau à 2 dimensions <=> MAtrice (N,N)
+
+    //Exemple Matrice  (Juste pour la vue et non le syntax) 
+    /*               col0
+        Matrice =   [12,6,19, 9, 0]  row 0
+                    [40,70,3,29,19,7] row 1
+    */
+    Noms <- ["Ndiaye" , "Diop" , "Diaw" , "Diallo"]
+    Read(Matrice[0][0]) ;
+    Read(Matrice[0][1]) ;
+    Read(Matrice[0][2]) ;
+    Read(Matrice[0][3]) ;
+    Read(Matrice[0][4]) ;
+
+    Matrice[0][0] <- 12
+    Matrice[0][1] <- 6
+    Matrice[0][2] <- 19
+    Matrice[0][3] <- 9
+    Matrice[0][4] <- 0
+//([12,6,19,9,0])
+
+    Read(Matrice[1][0]) ;
+    Read(Matrice[1][1]) ;
+    Read(Matrice[1][2]) ;
+    Read(Matrice[1][3]) ;
+    Read(Matrice[1][4]) ;
+    Read(Matrice[1][5]) ;
+
+    Matrice[1][1] <- 40 ;
+    Matrice[1][2] <- 70 ;
+    Matrice[1][3] <- 3;
+    Matrice[1][4] <- 29;
+    Matrice[1][5] <- 17;
+    Matrice[1][6] <- 7;
+// [40,70,3,29,17,7]
+
+
+//[12,6,19,9,0]
+//[40,70,3,29,17,7]
+
+    Write(Matrice[3][5])  ;//Impossible
+    Write(Matrice[1][5]) ;//output : 7
+
+    somme := (Matrice[0][2] + Matrice[1][3]) / 2  ; //Output : somme = 19
+//  somme =  (      19       +     29 )      / 2   =>  somme = 38/2  => somme = 19
+
+    
+END

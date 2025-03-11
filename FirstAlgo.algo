@@ -1,0 +1,33 @@
+ALGORITHM Somme
+VAR
+    age : INTEGER ; //Déclaration de variables
+
+BEGIN
+    Write("Donnez votre age SVP!!!")
+    Read(age)
+
+    //Premier type de condition
+    // IF (age < 18 ) THEN
+    //     Write("t'es un gamin")
+    // END_IF
+
+    // Deuxieme type 
+
+    // IF (age < 18) THEN
+    //     Write("t'es un gamin")
+    // ELSE
+    //     Write("t'es un adulte")
+    // END_IF
+
+// Troisieme Type
+Write('Hey')
+IF (age < 0) THEN
+    Write("Error !! L'age doit etre Positif")
+ELSE_IF ((age > 0) AND (age < 18) ) THEN
+        Write("t'es un gamin")
+ELSE
+        Write("t'es un adulte")
+END_IF
+    Write("Hello")
+    
+END

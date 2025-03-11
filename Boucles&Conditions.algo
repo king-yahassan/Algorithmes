@@ -1,0 +1,70 @@
+ALGORITHM Boucles_Conditions
+VAR
+    Notes : ARRAY_OF FLOAT [100];
+    i: INTEGER ;
+BEGIN
+    FOR i FROM 0 TO 10 STEP 1  DO
+        Write("L'indice ou la position:" , i)
+    END_FOR
+    //i=0  => L'indice ou la position: 0  
+    // STEP 1 (i= i + 1 => i= 0+1 donc i = 1)
+
+    //i=1  => L'indice ou la position: 1 
+    // STEP 1 (i= i + 1 => i= 1+1 donc i = 2)
+
+    //i=2  => L'indice ou la position: 2
+    //...
+    //i=10  => L'indice ou la position: 10
+
+    //L'indice ou la position: 0
+    //L'indice ou la position: 2
+    //L'indice ou la position: 3
+    //L'indice ou la position: 4
+    //L'indice ou la position: 5
+    //L'indice ou la position: 6
+    //L'indice ou la position: 7
+    //L'indice ou la position: 8
+    //L'indice ou la position: 9
+    //L'indice ou la position: 10
+
+    Notes := [13 , 14,5 , 18 , 8 ,..., 17 ] ; // Notes(1, 100)
+//  indices   0     1     2    3       100    
+
+    FOR i FROM 0 TO 100 STEP 1 DO
+        Notes[i] =Notes[i] + 2
+    END_FOR
+
+    i=0 // i FROM min
+    
+    WHILE (i<=10) DO // TO max
+        Write("L'indice ou la position:" , i)
+        i++ // i = i + 1  STEP 1 
+    END_WHILE
+
+//Exemple Ajoutez + 3 sur les Notes à Tous lesatudiants qui ont plus de 15 
+    i=0
+    WHILE (Notes[i]>15) DO
+        Notes[i] =Notes[i] + 3
+        i++
+    END_WHILE
+
+    //Run
+    //i =0 ; Notes[i] > 15 <=> Notes[0]> 15  <=> 13 > 15? false 
+    //i= 1 : Notes[1] > 15 <=> Notes[1] > 15 <=> 14,5 > 15 ? false
+    //i=2 ; Notes[2] > 15 <=> 18 > 15 ? true donc Notes[2] +3 => Notes[2] 18+3 = 21
+    
+    DO WHILE (Notes[i]>15)
+        Notes[i] =Notes[i] + 3 
+        i++
+    END_WHILE
+
+    //i =0 ; Notes[i] = Notes[i] + 3 => Notes[0] = 13+3 =16 // C"est ce qui marque la difference avec While
+
+    //i =0 ; Notes[i] > 15 <=> Notes[0]> 15  <=> 13 > 15? false 
+    //i= 1 : Notes[1] > 15 <=> Notes[1] > 15 <=> 14,5 > 15 ? false
+    //i=2 ; Notes[2] > 15 <=> 18 > 15 ? true donc Notes[2] +3 => Notes[2] 18+3 = 21
+
+
+
+
+END
